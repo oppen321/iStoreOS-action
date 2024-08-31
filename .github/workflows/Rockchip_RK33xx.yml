@@ -1,4 +1,4 @@
-name: Rockchip_OpenWrt
+name: Rockchip_RK33xx
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
 env:
   REPO_URL: https://github.com/istoreos/istoreos
   REPO_BRANCH: istoreos-22.03
-  CONFIG_FILE: configs/rockchip-rk33xx.config
+  CONFIG_FILE: configs/rockchip.config
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
@@ -46,10 +46,6 @@ jobs:
         sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
         sudo -E apt-get -y update
         sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.org/init_build_environment.sh)'
-        wget https://bootstrap.pypa.io/pip/3.6/get-pip.py
-        sudo python3 get-pip.py
-        sudo rm -rf get-pip.py
-        sudo pip install pyelftools        
         sudo -E systemctl daemon-reload
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get -y clean
@@ -101,25 +97,22 @@ jobs:
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
 
+    - name: Install Feeds
+      run: |
+        cd $OPENWRT_PATH
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+
     - name: Load Custom Configuration
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
         chmod +x $DIY_SCRIPT
+        chmod +x $GITHUB_WORKSPACE/scripts/*.sh
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
-    
-    - name: Install Feeds
-      run: |
-        cd $OPENWRT_PATH
-        echo 'src-git third_party https://github.com/linkease/istore-packages.git;main' >>feeds.conf.default
-        echo 'src-git diskman https://github.com/jjm2473/luci-app-diskman.git;dev' >>feeds.conf.default
-        echo 'src-git oaf https://github.com/jjm2473/OpenAppFilter.git;dev4' >>feeds.conf.default
-        echo 'src-git linkease_nas https://github.com/linkease/nas-packages.git;master' >>feeds.conf.default
-        echo 'src-git linkease_nas_luci https://github.com/linkease/nas-packages-luci.git;main' >>feeds.conf.default
-        echo 'src-git jjm2473_apps https://github.com/jjm2473/openwrt-apps.git;main' >>feeds.conf.default
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
+        $GITHUB_WORKSPACE/scripts/preset-clash-core.sh $CLASH_KERNEL
+        $GITHUB_WORKSPACE/scripts/preset-terminal-tools.sh
 
     - name: Download DL Package
       run: |
@@ -181,7 +174,7 @@ jobs:
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
           ### 📒 固件信息
-          - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }} (rk33xx)
+          - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }} (rk33xx, rk35xx)
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
           - 🚀 内核版本: ${{ env.KERNEL }}
