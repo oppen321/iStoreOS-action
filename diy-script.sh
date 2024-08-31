@@ -13,7 +13,12 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-
+git clone --depth=1 istore-packages https://github.com/linkease/istore-packages.git;main package/istore-packages
+git clone --depth=1 https://github.com/jjm2473/luci-app-diskman.git;dev package/diskman
+git clone --depth=1 https://github.com/jjm2473/OpenAppFilter.git;dev4 package/oaf
+git clone --depth=1 https://github.com/linkease/nas-packages.git;master package/nas-packages
+git clone --depth=1 https://github.com/linkease/nas-packages-luci.git;main package/nas-packages-luci
+git clone --depth=1 https://github.com/jjm2473/openwrt-apps.git;main package/openwrt-apps
 
 #./scripts/feeds update -a
 #./scripts/feeds install -a
