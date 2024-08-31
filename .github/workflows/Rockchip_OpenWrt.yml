@@ -45,7 +45,7 @@ jobs:
         sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d /usr/local/lib/android $AGENT_TOOLSDIRECTORY
         sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
         sudo -E apt-get -y update
-        sudo -E apt-get -qq install $(cat $GITHUB_WORKSPACE/depends/)
+        sudo -E apt-get -qq install $(cat $GITHUB_WORKSPACE/depends/ubuntu-22.04)
         wget https://bootstrap.pypa.io/pip/3.6/get-pip.py
         sudo python3 get-pip.py
         sudo rm -rf get-pip.py
