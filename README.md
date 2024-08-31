@@ -14,19 +14,10 @@ x86 (coming soon)
 # Getting Started
 To start using this repository, follow these steps:
 
-Fork the Repository: Click the "Fork" button at the top right corner of this page to create your own copy of this repository.
-Configure Your Build: Edit the .config file or use the default configuration for your target device.
-Enable GitHub Actions: Make sure GitHub Actions are enabled in your forked repository.
-Start a Build: Trigger a build manually or push changes to your repository to start the build process.
-
-# Usage
-Clone the Repository:
-
-bash
-复制代码
-git clone https://github.com/your-username/istoreos-action.git
-cd istoreos-action
-Customize Configuration:
+1.Fork the Repository: Click the "Fork" button at the top right corner of this page to create your own copy of this repository.
+2.Configure Your Build: Edit the .config file or use the default configuration for your target device.
+3.Enable GitHub Actions: Make sure GitHub Actions are enabled in your forked repository.
+4.Start a Build: Trigger a build manually or push changes to your repository to start the build process.
 
 Edit .config to change the build configuration.
 Trigger a Build:
