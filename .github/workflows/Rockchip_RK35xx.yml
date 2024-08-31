@@ -8,13 +8,13 @@ on:
 env:
   REPO_URL: https://github.com/istoreos/istoreos
   REPO_BRANCH: istoreos-22.03
-  CONFIG_FILE: configs/rockchip-rk33xx.config
+  CONFIG_FILE: configs/rockchip-rk35xx.config
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: RK33xx
+  FIRMWARE_TAG: RK35xx
   TZ: Asia/Shanghai
 
 jobs:
