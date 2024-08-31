@@ -80,11 +80,7 @@ jobs:
         echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> $GITHUB_ENV
         COMMIT_HASH=$(git show -s --date=short --format="hash: %H")
         echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
-        
-    - name: Copy Feeds Configuration
-      run: |
-        cp $GITHUB_WORKSPACE/feeds.conf openwrt/feeds.conf.default
-        
+
     - name: Generate Variables
       run: |
         cp $CONFIG_FILE $OPENWRT_PATH/.config
@@ -116,6 +112,12 @@ jobs:
     - name: Install Feeds
       run: |
         cd $OPENWRT_PATH
+        echo 'src-git third_party https://github.com/linkease/istore-packages.git;main' >>feeds.conf.default
+        echo 'src-git diskman https://github.com/jjm2473/luci-app-diskman.git;dev' >>feeds.conf.default
+        echo 'src-git oaf https://github.com/jjm2473/OpenAppFilter.git;dev4' >>feeds.conf.default
+        echo 'src-git linkease_nas https://github.com/linkease/nas-packages.git;master' >>feeds.conf.default
+        echo 'src-git linkease_nas_luci https://github.com/linkease/nas-packages-luci.git;main' >>feeds.conf.default
+        echo 'src-git jjm2473_apps https://github.com/jjm2473/openwrt-apps.git;main' >>feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
@@ -179,7 +181,7 @@ jobs:
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
           ### 📒 固件信息
-          - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }} (rk35xx)
+          - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }} (rk33xx)
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
           - 🚀 内核版本: ${{ env.KERNEL }}
