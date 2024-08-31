@@ -22,8 +22,12 @@ To start using this repository, follow these steps:
 # Push changes 
 x86 Device Support: We plan to extend support to x86 devices in the near future.
 Enhanced Customization: More options for customization and optimization of builds.
-Contributing
+
+# Acknowledgments
+Special thanks to the istoreos official team for providing the source code, which made the development and automated compilation of this project possible.
+
+# Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests to enhance the functionality of this repository.
 
-License
+# License
 This project is licensed under the MIT License - see the LICENSE file for details.
