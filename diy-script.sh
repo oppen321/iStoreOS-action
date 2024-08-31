@@ -9,3 +9,7 @@ echo 'src-git oaf https://github.com/jjm2473/OpenAppFilter.git;dev4' >>feeds.con
 echo 'src-git linkease_nas https://github.com/linkease/nas-packages.git;master' >>feeds.conf.default
 echo 'src-git linkease_nas_luci https://github.com/linkease/nas-packages-luci.git;main' >>feeds.conf.default
 echo 'src-git jjm2473_apps https://github.com/jjm2473/openwrt-apps.git;main' >>feeds.conf.default
+
+
+./scripts/feeds update -a
+./scripts/feeds install -a
