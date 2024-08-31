@@ -14,16 +14,12 @@ x86 (coming soon)
 # Getting Started
 To start using this repository, follow these steps:
 
-1.Fork the Repository: Click the "Fork" button at the top right corner of this page to create your own copy of this repository.
-2.Configure Your Build: Edit the .config file or use the default configuration for your target device.
-3.Enable GitHub Actions: Make sure GitHub Actions are enabled in your forked repository.
-4.Start a Build: Trigger a build manually or push changes to your repository to start the build process.
+1. Fork the Repository: Click the "Fork" button at the top right corner of this page to create your own copy of this repository.
+2. Configure Your Build: Edit the .config file or use the default configuration for your target device.
+3. Enable GitHub Actions: Make sure GitHub Actions are enabled in your forked repository.
+4. Start a Build: Trigger a build manually or push changes to your repository to start the build process.
 
-Edit .config to change the build configuration.
-Trigger a Build:
-
-Push changes to your repository, and GitHub Actions will automatically start the build process.
-Future Plans
+# Push changes 
 x86 Device Support: We plan to extend support to x86 devices in the near future.
 Enhanced Customization: More options for customization and optimization of builds.
 Contributing
