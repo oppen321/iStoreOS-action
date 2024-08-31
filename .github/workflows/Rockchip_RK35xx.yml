@@ -14,7 +14,7 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: RK35xx
+  FIRMWARE_TAG: RK33xx
   TZ: Asia/Shanghai
 
 jobs:
@@ -101,6 +101,12 @@ jobs:
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
 
+    - name: Install Feeds
+      run: |
+        cd $OPENWRT_PATH
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+
     - name: Load Custom Configuration
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
@@ -108,18 +114,6 @@ jobs:
         chmod +x $DIY_SCRIPT
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
-    
-    - name: Install Feeds
-      run: |
-        cd $OPENWRT_PATH
-        echo 'src-git third_party https://github.com/linkease/istore-packages.git;main' >>feeds.conf.default
-        echo 'src-git diskman https://github.com/jjm2473/luci-app-diskman.git;dev' >>feeds.conf.default
-        echo 'src-git oaf https://github.com/jjm2473/OpenAppFilter.git;dev4' >>feeds.conf.default
-        echo 'src-git linkease_nas https://github.com/linkease/nas-packages.git;master' >>feeds.conf.default
-        echo 'src-git linkease_nas_luci https://github.com/linkease/nas-packages-luci.git;main' >>feeds.conf.default
-        echo 'src-git jjm2473_apps https://github.com/jjm2473/openwrt-apps.git;main' >>feeds.conf.default
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
 
     - name: Download DL Package
       run: |
