@@ -1,4 +1,4 @@
-name: Rockchip_OpenWrt
+name: Rockchip_RK35xx
 
 on:
   workflow_dispatch:
