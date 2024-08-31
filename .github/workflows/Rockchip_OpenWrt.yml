@@ -108,6 +108,7 @@ jobs:
         chmod +x $DIY_SCRIPT
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
+    
     - name: Install Feeds
       run: |
         cd $OPENWRT_PATH
