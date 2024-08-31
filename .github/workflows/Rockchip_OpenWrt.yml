@@ -8,7 +8,7 @@ on:
 env:
   REPO_URL: https://github.com/istoreos/istoreos
   REPO_BRANCH: istoreos-22.03
-  CONFIG_FILE: configs/rockchip.config
+  CONFIG_FILE: configs/rockchip-rk33xx.config
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
