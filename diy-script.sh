@@ -20,5 +20,5 @@ git clone --depth=1 https://github.com/linkease/nas-packages.git;master package/
 git clone --depth=1 https://github.com/linkease/nas-packages-luci.git;main package/nas-packages-luci
 git clone --depth=1 https://github.com/jjm2473/openwrt-apps.git;main package/openwrt-apps
 
-#./scripts/feeds update -a
-#./scripts/feeds install -a
+./scripts/feeds update -a
+./scripts/feeds install -a
