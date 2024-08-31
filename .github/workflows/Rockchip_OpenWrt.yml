@@ -6,8 +6,8 @@ on:
 #    - cron: 0 18 * * *
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: openwrt-23.05
+  REPO_URL: https://github.com/istoreos/istoreos
+  REPO_BRANCH: istoreos-22.03
   CONFIG_FILE: configs/rockchip.config
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: arm64
