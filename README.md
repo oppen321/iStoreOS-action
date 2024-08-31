@@ -1,22 +1,25 @@
-istoreos Firmware Compilation Using GitHub Actions
+# istoreos Firmware Compilation Using GitHub Actions
 This repository automates the process of compiling istoreos firmware using GitHub Actions. Currently, it supports rk33xx and rk35xx devices, with plans to add support for x86 devices in the future.
 
-Features
+# Features
 Automated Builds: Utilize GitHub Actions to automatically compile firmware for supported devices.
 Multi-Device Support: Initially supports rk33xx and rk35xx devices, with x86 support coming soon.
 Customizable Configurations: Easily modify configurations to suit your needs.
-Supported Devices
+
+# Supported Devices
 rk33xx
 rk35xx
 x86 (coming soon)
-Getting Started
+
+# Getting Started
 To start using this repository, follow these steps:
 
 Fork the Repository: Click the "Fork" button at the top right corner of this page to create your own copy of this repository.
 Configure Your Build: Edit the .config file or use the default configuration for your target device.
 Enable GitHub Actions: Make sure GitHub Actions are enabled in your forked repository.
 Start a Build: Trigger a build manually or push changes to your repository to start the build process.
-Usage
+
+# Usage
 Clone the Repository:
 
 bash
