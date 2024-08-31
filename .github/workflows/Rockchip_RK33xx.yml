@@ -173,7 +173,7 @@ jobs:
         token: ${{ secrets.TOKEN_OPPEN321 }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
-          **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
+          **This is iStoreOS Firmware for ${{ env.FIRMWARE_TAG }}**
           ### 📒 固件信息
           - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }} (rk33xx)
           - ⚽ 固件源码: ${{ env.REPO_URL }}
