@@ -3,6 +3,9 @@
 # 修改默认IP
 #sed -i 's/192.168.100.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
+# 更改 Argon 主题背景
+cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
