@@ -7,9 +7,9 @@ Multi-Device Support: Initially supports rk33xx and rk35xx devices, with x86 sup
 Customizable Configurations: Easily modify configurations to suit your needs.
 
 # Supported Devices
-rk33xx
-rk35xx
-x86 (coming soon)
+ rk33xx
+ rk35xx
+ x86 (coming soon)
 
 # Getting Started
 To start using this repository, follow these steps:
