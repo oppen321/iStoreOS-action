@@ -1,6 +1,6 @@
 # istoreos Firmware Compilation Using GitHub Actions 
-This repository automates the process of compiling istoreos firmware using GitHub Actions. Currently, it supports rk33xx and rk35xx devices, with plans to add support for x86 devices in the future.
-[简体中文](README_ZH.md) 
+This repository automates the process of compiling istoreos firmware using GitHub Actions. Currently, it supports rk33xx and rk35xx devices, with plans to add support for x86 devices in the future.[简体中文](README_ZH.md) 
+
 # Features
 Automated Builds: Utilize GitHub Actions to automatically compile firmware for supported devices.
 Multi-Device Support: Initially supports rk33xx and rk35xx devices, with x86 support coming soon.
