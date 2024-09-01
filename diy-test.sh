@@ -6,6 +6,12 @@
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing-box*}
+rm -rf feeds/packages/utils/v2dat
+rm -rf feeds/packages/lang/golang
+rm -rf feeds/luci/applications/luci-app-mosdns
+
+
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
