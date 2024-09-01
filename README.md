@@ -6,6 +6,9 @@ Automated Builds: Utilize GitHub Actions to automatically compile firmware for s
 Multi-Device Support: Initially supports rk33xx and rk35xx devices, with x86 support coming soon.
 Customizable Configurations: Easily modify configurations to suit your needs.
 
+# Text version test
+Tesx version adds plugins such as adguardhome, openclash, mosdns, etc. If you need to use them, please select the corresponding firmware with the test suffix in Releases to download.
+
 # Supported Devices
 1. rk33xx
 2. rk35xx
