@@ -1,4 +1,4 @@
-name: x86_OpenWrt
+name: x86_iStoreOS
 
 on:
   workflow_dispatch:
