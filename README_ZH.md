@@ -9,6 +9,10 @@
 rk33xx
 rk35xx
 x86（即将支持）
+
+# Text版本测试
+Tesx版本加入adguardhome、openclash、mosdns等插件，如需使用请在Releases选择带test尾标的相应固件下载
+
 # 快速开始
 要开始使用此仓库，请按照以下步骤操作：
 
