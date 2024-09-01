@@ -1,20 +1,20 @@
-name: Rockchip_RK33xx
+name: 测试RK33xx.yml
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 18 * * *
+#  schedule:
+#    - cron: 0 18 * * *
 
 env:
   REPO_URL: https://github.com/istoreos/istoreos
   REPO_BRANCH: istoreos-22.03
-  CONFIG_FILE: configs/rockchip-rk33xx.config
-  DIY_SCRIPT: diy-script.sh
+  CONFIG_FILE: configs/test-rk33xx.config
+  DIY_SCRIPT: diy-test.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: RK33xx
+  FIRMWARE_TAG: RK33xx-test
   TZ: Asia/Shanghai
 
 jobs:
@@ -175,7 +175,7 @@ jobs:
         body: |
           **This is iStoreOS Firmware for ${{ env.FIRMWARE_TAG }}**
           ### 📒 固件信息
-          - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }} (rk33xx)
+          - 💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }} (rk33xx-test)
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
           - 🚀 内核版本: ${{ env.KERNEL }}
