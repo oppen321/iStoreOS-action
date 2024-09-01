@@ -22,6 +22,10 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
+# 科学上网插件
+git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
+
+# iStoreOS 官方插件库
 git clone --depth=1 -b main https://github.com/linkease/istore-packages package/istore-packages
 git clone --depth=1 -b dev https://github.com/jjm2473/luci-app-diskman package/diskman
 git clone --depth=1 -b dev4 https://github.com/jjm2473/OpenAppFilter package/oaf
