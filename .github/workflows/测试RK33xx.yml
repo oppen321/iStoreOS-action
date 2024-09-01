@@ -16,8 +16,7 @@ env:
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: RK33xx
   TZ: Asia/Shanghai
-  MD5_TO_VERMAGIC: "59d1431675acc6823a33c7eb2323daeb"  # 替换为你的 MD5 值
-  
+
 jobs:
   Build:
     runs-on: ubuntu-22.04
@@ -115,17 +114,7 @@ jobs:
         chmod +x $DIY_SCRIPT
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
-        
-    - name: 设置 MD5 值为内核版本
-      run: |
-        # 在这里，你需要转换 MD5 到 vermagic，如果已经知道转换方式，可以执行相关操作
-        # 示例: 
-        echo "${{ env.MD5_TO_VERMAGIC }}" > vermagic
-        VERMAGIC=$(cat vermagic)
-        echo "KERNEL_VERMAGIC=$VERMAGIC" >> $OPENWRT_PATH/.config
-        cd $OPENWRT_PATH
-        make defconfig
-        
+
     - name: Download DL Package
       run: |
         cd $OPENWRT_PATH
