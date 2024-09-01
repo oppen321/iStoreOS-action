@@ -7,7 +7,7 @@ on:
 
 env:
   REPO_URL: https://github.com/istoreos/istoreos
-  REPO_BRANCH: 
+  REPO_BRANCH: istoreos-22.03 
   CONFIG_FILE: configs/x86.config
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: amd64
