@@ -6,7 +6,7 @@ on:
     - cron: 0 17 * * *
 
 env:
-  REPO_URL: https://github.com/oppen321/istoreos
+  REPO_URL: https://github.com/istoreos/istoreos
   REPO_BRANCH: istoreos-22.03
   CONFIG_FILE: configs/test-rk33xx.config
   DIY_SCRIPT: diy-test.sh
